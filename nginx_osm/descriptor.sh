@@ -10,7 +10,7 @@
 #Step1:
 #sudo apt update
 #sudo apt-get -y install libguestfs-tools
-export LIBGUESTFS_BACKEND=direct
+#export LIBGUESTFS_BACKEND=direct
 
 #Step2:
 wget http://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img
@@ -43,6 +43,7 @@ virt-customize -a xenial-server-cloudimg-amd64-disk1.img \
       --upload log_intf_statistics.py:/log_intf_statistics.py \
       --run-command 'chmod +x start.sh' \
       --run-command 'chmod +x stop.sh' \
+      --run-command 'echo "manage_etc_hosts: true" >> /etc/cloud/cloud.cfg' \
       --mkdir /tngbench_share
 
       # normal entry point
