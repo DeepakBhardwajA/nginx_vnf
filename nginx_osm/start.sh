@@ -16,10 +16,10 @@ do
  fi
 done
 
-export TCP_LISTEN_PORT=8888
+export TCP_LISTEN_PORT=8080
 sed -i 's/TCP_LISTEN_PORT/'"$TCP_LISTEN_PORT"'/g' /etc/nginx/nginx.conf
-sed -i 's/TCP_SERVER1/'"$OUTPUT1"'/g' /etc/nginx/nginx.conf
-sed -i 's/TCP_SERVER2/'"$OUTPUT2"'/g' /etc/nginx/nginx.conf
+sed -i 's/TCP_SERVER1/'"server  $OUTPUT1:8080"'/g' /etc/nginx/nginx.conf
+sed -i 's/TCP_SERVER2/'"server  $OUTPUT2:8080"'/g' /etc/nginx/nginx.conf
 
 nginx &
 
