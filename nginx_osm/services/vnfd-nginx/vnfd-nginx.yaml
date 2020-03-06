@@ -17,7 +17,7 @@ vnfd:vnfd-catalog:
     version: '1.0'
     short-name: ng-vnf
     vdu:
-    - cloud-init-file: cloud-config.txt
+    - cloud-init-file: cloudconfig.txt
       count: 1
       description: contains configuration for VMs(VNF) running on OpenStack
       id: vnfd-nginx-vm

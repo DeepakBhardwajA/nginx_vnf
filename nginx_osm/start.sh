@@ -16,7 +16,7 @@ do
  fi
 done
 
-ENV UDP_LISTEN_PORT 8888
+export TCP_LISTEN_PORT=8888
 sed -i 's/TCP_LISTEN_PORT/'"$TCP_LISTEN_PORT"'/g' /etc/nginx/nginx.conf
 sed -i 's/TCP_SERVER1/'"$OUTPUT1"'/g' /etc/nginx/nginx.conf
 sed -i 's/TCP_SERVER2/'"$OUTPUT2"'/g' /etc/nginx/nginx.conf
