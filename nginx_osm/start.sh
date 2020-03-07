@@ -21,6 +21,8 @@ sed -i 's/TCP_LISTEN_PORT/'"$TCP_LISTEN_PORT"'/g' /etc/nginx/nginx.conf
 sed -i 's/TCP_SERVER1/'"server  $OUTPUT1:80;"'/g' /etc/nginx/nginx.conf
 sed -i 's/TCP_SERVER2/'"server  $OUTPUT2:80;"'/g' /etc/nginx/nginx.conf
 
+sleep 10
+echo "server added"
 nginx &
 
 echo "Nginx VNF started ..."
